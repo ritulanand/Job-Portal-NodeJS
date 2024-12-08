@@ -1,0 +1,10 @@
+<h1>Job Listings</h1>
+
+<ul>
+  <% jobs.forEach(job => { %>
+  <li>
+    <a href="/jobs/<%= job.id %>"><%= job.title %> - <%= job.companyName %></a>
+    <p>Location: <%= job.location %> | Salary: <%= job.salary %></p>
+  </li>
+  <% }) %>
+</ul>

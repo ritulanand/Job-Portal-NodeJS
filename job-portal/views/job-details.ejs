@@ -1,0 +1,15 @@
+
+
+<h1><%= job.title %></h1>
+<p><strong>Company:</strong> <%= job.companyName %></p>
+<p><strong>Location:</strong> <%= job.location %></p>
+<p><strong>Salary:</strong> <%= job.salary %></p>
+<p><strong>Description:</strong> <%= job.description %></p>
+<p><strong>Apply By:</strong> <%= job.applyBy %></p>
+
+<!-- If the user is logged in, show the apply button -->
+<% if (session.userEmail) { %>
+<a href="/jobs/<%= job.id %>/apply" class="apply-btn">Apply Now</a>
+<% } else { %>
+<p>You need to <a href="/login">login</a> to apply for this job.</p>
+<% } %>
